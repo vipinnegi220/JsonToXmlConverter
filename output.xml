@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Item>
+    <id>1</id>
+    <title>Do you work in a Bank or Credit Union                                                                                                                                                                                                                                                                                                                                                                           </title>
+    <orderSequence>1</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select one                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>2</id>
+    <title>What is your current role                                                                                                                                                                                                                                                                                                                                                                                       </title>
+    <orderSequence>2</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select one                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>3</id>
+    <title>How much in assets do you have under management                                                                                                                                                                                                                                                                                                                                                                 </title>
+    <orderSequence>3</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select one                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>4</id>
+    <title>What are your regional areas of focus as an institution                                                                                                                                                                                                                                                                                                                                                         </title>
+    <orderSequence>4</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select one                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>5</id>
+    <title>Which of the following statements best describes your role in identifying and purchasing outside technology/software solutions to help your company better operate your business                                                                                                                                                                                                                                </title>
+    <orderSequence>5</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select one                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>6</id>
+    <title>How Much do You Agree or Disagree with the Following Statements                                                                                                                                                                                                                                                                                                                                                 </title>
+    <orderSequence>6</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>7</id>
+    <title>As 2024 approaches, my customers are most afraid of                                                                                                                                                                                                                                                                                                                                                             </title>
+    <orderSequence>7</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>8</id>
+    <title>The following are amongst my most pressing needs in my current day-to-day role                                                                                                                                                                                                                                                                                                                                  </title>
+    <orderSequence>8</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>9</id>
+    <title>My customers are most interested in the following banking innovations                                                                                                                                                                                                                                                                                                                                           </title>
+    <orderSequence>9</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>10</id>
+    <title>The following attributes best describe me                                                                                                                                                                                                                                                                                                                                                                       </title>
+    <orderSequence>10</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </instructionText>
+    <questionType>
+      <id>1</id>
+      <type>radio                                                                                               </type>
+    </questionType>
+    <questionTypeId>1</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>11</id>
+    <title>Community Banks and Credit Unions want the opportunity to work with boutique firms that can help elevate their strategies to compete more effectively and win greater share in                                                                                                                                                                                                                                  </title>
+    <orderSequence>11</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>12</id>
+    <title>I would choose a financial services consulting/fintech firm who viewed itself as a partner versus a provider and valued the relationship over the                                                                                                                                                                                                                                                               </title>
+    <orderSequence>12</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>13</id>
+    <title>I want a financial services consulting/fintech provider that helps me create more innovative and education-based banking products and services that are self-directed for                                                                                                                                                                                                                                       </title>
+    <orderSequence>13</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>14</id>
+    <title>Customized banking solutions designed to meet my customers’ every need provides significant opportunity for                                                                                                                                                                                                                                                                                                     </title>
+    <orderSequence>14</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>15</id>
+    <title>Investing in human-led innovation poises financial institutions to both retain and acquire new                                                                                                                                                                                                                                                                                                                  </title>
+    <orderSequence>15</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>16</id>
+    <title>Creating new and more value-delivery based, personalized solutions can help attract new                                                                                                                                                                                                                                                                                                                         </title>
+    <orderSequence>16</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>17</id>
+    <title>Offering people the opportunity to bank differently by reimagining the idea of what a financial institution can be is the key to                                                                                                                                                                                                                                                                                </title>
+    <orderSequence>17</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>18</id>
+    <title>A financial partner respecting its customers data privacy must be a core value                                                                                                                                                                                                                                                                                                                                  </title>
+    <orderSequence>18</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>19</id>
+    <title>Offering the tools which best resonate with each customer is an opportunity for unique                                                                                                                                                                                                                                                                                                                          </title>
+    <orderSequence>19</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>20</id>
+    <title>People have limited loyalty to brands today and next-gen banks and FinTech’s have the opportunity to capitalize on that white                                                                                                                                                                                                                                                                                   </title>
+    <orderSequence>20</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>21</id>
+    <title>Engagement with younger consumers today in financial services is based on product performance and value                                                                                                                                                                                                                                                                                                         </title>
+    <orderSequence>21</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>22</id>
+    <title>Building market share by joining checking and savings to make the best product offering is an appealing offering for                                                                                                                                                                                                                                                                                            </title>
+    <orderSequence>22</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>23</id>
+    <title>Now more than ever, I believe understanding our customer’s deepest needs is critical for                                                                                                                                                                                                                                                                                                                        </title>
+    <orderSequence>23</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>24</id>
+    <title>Community Banks and Credit Unions want the opportunity to have partners that have extensive knowledge and experience in financial services and                                                                                                                                                                                                                                                                  </title>
+    <orderSequence>24</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>25</id>
+    <title>I would choose a financial service consulting firm that can help me solve and execute complex issues and large-scale projects through a combination of both technology and                                                                                                                                                                                                                                      </title>
+    <orderSequence>25</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>26</id>
+    <title>Banks and Credit Unions would benefit from elevating their offerings in ways that are data-                                                                                                                                                                                                                                                                                                                     </title>
+    <orderSequence>26</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>27</id>
+    <title>Banks and Credit Unions would benefit from elevating their offerings in ways that are customer                                                                                                                                                                                                                                                                                                                  </title>
+    <orderSequence>27</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>28</id>
+    <title>Banks and Credit Unions would benefit from their digital channel outperforming their busiest                                                                                                                                                                                                                                                                                                                    </title>
+    <orderSequence>28</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>29</id>
+    <title>Banks and Credit Unions would benefit from their data providing them insights as to where and how they could continuously improve their product offerings and delivery                                                                                                                                                                                                                                          </title>
+    <orderSequence>29</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>30</id>
+    <title>Banks and Credit Unions are currently experiencing data disparity challenges resulting in the inability to mine their data to understand their                                                                                                                                                                                                                                                                  </title>
+    <orderSequence>30</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>31</id>
+    <title>Banks and Credit Unions would benefit from having a 360-degree view of their fraud and risk across all products and                                                                                                                                                                                                                                                                                             </title>
+    <orderSequence>31</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>32</id>
+    <title>Today’s customers do not tend to have all of their accounts with one financial institution and Banks and Credit Unions would benefit from being the money movement hub for their customers/                                                                                                                                                                                                                     </title>
+    <orderSequence>32</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>33</id>
+    <title>Banks and Credit Unions would benefit from their Executive Team seeing each other as the strongest team that they have ever been on and being all in on their mission, vision, and                                                                                                                                                                                                                              </title>
+    <orderSequence>33</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>34</id>
+    <title>Banks and Credit Unions would benefit from being able to sleep at night knowing that their information security was intentionally designed and implemented to keep bad actors                                                                                                                                                                                                                                   </title>
+    <orderSequence>34</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>35</id>
+    <title>Banks and Credit Unions would benefit from understanding cloud technology its                                                                                                                                                                                                                                                                                                                                   </title>
+    <orderSequence>35</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>36</id>
+    <title>Banks and Credit Unions need a better understanding on leveraging APIs to enhance their customer’s experience and business                                                                                                                                                                                                                                                                                      </title>
+    <orderSequence>36</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>37</id>
+    <title>Banks and Credit Unions would benefit from having a partner that they know will bring them the latest information on AI, the different technologies behind it, and the most popular uses                                                                                                                                                                                                                        </title>
+    <orderSequence>37</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>38</id>
+    <title>Banks and Credit Unions would benefit from a group of partners and peers to use as a sounding board to push beyond what they thought was only possible for a big bank to                                                                                                                                                                                                                                        </title>
+    <orderSequence>38</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>39</id>
+    <title>Banks and Credit Unions would benefit from having a proven partner to create a plan and framework to establish a culture that focuses on collaboration and                                                                                                                                                                                                                                                      </title>
+    <orderSequence>39</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+  <Item>
+    <id>40</id>
+    <title>Banks and Credit Unions would benefit from an eCommerce partner with expertise in how to create fully transparent like experiences in a highly regulated, legacy system driven                                                                                                                                                                                                                                  </title>
+    <orderSequence>40</orderSequence>
+    <isMandatory>True</isMandatory>
+    <instructionText>Please select all the emotions that apply                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </instructionText>
+    <questionType>
+      <id>3</id>
+      <type>checkbox                                                                                            </type>
+    </questionType>
+    <questionTypeId>3</questionTypeId>
+    <surveyId>1</surveyId>
+  </Item>
+</Root>
