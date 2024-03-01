@@ -75,3 +75,4 @@ D:\OfficeProtral\JsonToXml\JsonToXmlConverter\obj\Debug\net8.0\refint\JsonToXmlC
 D:\OfficeProtral\JsonToXml\JsonToXmlConverter\obj\Debug\net8.0\JsonToXmlConverter.pdb
 D:\OfficeProtral\JsonToXml\JsonToXmlConverter\obj\Debug\net8.0\JsonToXmlConverter.genruntimeconfig.cache
 D:\OfficeProtral\JsonToXml\JsonToXmlConverter\obj\Debug\net8.0\ref\JsonToXmlConverter.dll
+D:\OfficeProtral\JsonToXml\JsonToXmlConverter\obj\Debug\net8.0\JsonToXmlConverter.sourcelink.json

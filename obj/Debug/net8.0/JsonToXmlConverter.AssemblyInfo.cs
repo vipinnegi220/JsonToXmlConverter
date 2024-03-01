@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JsonToXmlConverter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9a77e95dd69fcdf368f5a028e845063962eb41a")]
 [assembly: System.Reflection.AssemblyProductAttribute("JsonToXmlConverter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JsonToXmlConverter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
