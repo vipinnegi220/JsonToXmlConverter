@@ -1,4 +1,3 @@
-// JsonToXmlConverter.cs
 using System.Text.Json;
 using System.Xml.Linq;
 
@@ -21,13 +20,14 @@ namespace JsonToXmlConverter
                         XDocument xmlDocument = new();
                         XElement rootElementXml = new("root");
 
-                        foreach (var arrayItem in jsonDocument.RootElement.EnumerateArray())
+                        foreach (var question in jsonDocument.RootElement.EnumerateArray())
                         {
-                            XElement radioElement = new("radio", new XAttribute("label", arrayItem.GetProperty("label").GetString().Trim()));
-                            radioElement.Add(new XElement("title", arrayItem.GetProperty("title").GetString().Trim()));
+                            XElement xElement = GetQuestionTypeElement(question);
+
+                            xElement.Add(new XElement("title", question.GetProperty("title").GetString().Trim()));
 
                             // Ensure both opening and closing tags for <comment>
-                            string commentText = arrayItem.GetProperty("instructionText").GetString().Trim();
+                            string commentText = question.GetProperty("instructionText").GetString().Trim();
 
                             XElement commentElement = new("comment");
 
@@ -36,9 +36,10 @@ namespace JsonToXmlConverter
                                 commentElement.Value = commentText;
                             }
 
-                            radioElement.Add(commentElement);
+                            xElement.Add(commentElement);
 
-                            var questionOptions = arrayItem.GetProperty("questionOptions");
+                            var questionOptions = question.GetProperty("questionOptions");
+
                             if (questionOptions.ValueKind == JsonValueKind.Array)
                             {
                                 foreach (var option in questionOptions.EnumerateArray())
@@ -48,11 +49,11 @@ namespace JsonToXmlConverter
                                         Value = option.GetProperty("optionText").GetString().Trim()
                                     };
 
-                                    radioElement.Add(rowElement);
+                                    xElement.Add(rowElement);
                                 }
                             }
 
-                            rootElementXml.Add(radioElement);
+                            rootElementXml.Add(xElement);
 
                             // Add <suspend> element after each <radio> element
                             rootElementXml.Add(new XElement("suspend"));
@@ -77,6 +78,11 @@ namespace JsonToXmlConverter
             {
                 Console.WriteLine($"Error during conversion: {ex.Message}");
             }
+        }
+
+        private static XElement GetQuestionTypeElement(JsonElement item)
+        {
+            return new("radio", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
         }
 
         private static async Task<string> GetJsonDataFromApi(string apiUrl)
