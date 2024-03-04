@@ -114,6 +114,9 @@ namespace JsonToXmlConverter
                 case QuestionType.Checkbox:
                     questionType = new("checkbox", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
                     break;
+                case QuestionType.Select:
+                    questionType = new("select", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+                    break;
                 default:
                     Console.WriteLine("No matching question type found");
                     break;
