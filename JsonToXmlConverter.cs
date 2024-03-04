@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Xml.Linq;
@@ -26,7 +27,7 @@ namespace JsonToXmlConverter
                         {
                             XElement? xElement = GetQuestionTypeElement(question);
 
-                            xElement?.Add(new XElement("title", question.GetProperty("title").GetString().Trim()));
+                            xElement?.Add(new XElement("title", new XElement("strong", question.GetProperty("title").GetString().Trim())));
 
                             AddInstructionText(question, xElement);
 
@@ -79,6 +80,15 @@ namespace JsonToXmlConverter
             JsonObject obj = JsonNode.Parse(option.ToString()).AsObject();
 
             bool isRow = (bool)obj["isRow"];
+            string optionValue = (string)obj["value"];
+
+            if (optionValue != null)
+            {
+                return new(isRow ? "row" : "col", new XAttribute("label", option.GetProperty("label").GetString().Trim()), new XAttribute("value", option.GetProperty("value").GetString().Trim()))
+                {
+                    Value = option.GetProperty("optionText").GetString().Trim()
+                };
+            }
 
             return new(isRow ? "row" : "col", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
             {
@@ -94,35 +104,58 @@ namespace JsonToXmlConverter
 
             if (!string.IsNullOrEmpty(commentText))
             {
-                commentElement.Add(new XElement("em"));
+                commentElement.Add(new XElement("em", commentText));
 
-                commentElement.Value = commentText;
+                //commentElement.Value = commentText;
             }
 
             xElement?.Add(commentElement);
         }
 
-        private static XElement? GetQuestionTypeElement(JsonElement item)
+        private static XElement? GetQuestionTypeElement(JsonElement question)
         {
             XElement? questionType = null;
 
-            switch (item.GetProperty("questionType").GetProperty("type").GetString().Trim())
+            switch (question.GetProperty("questionType").GetProperty("type").GetString().Trim())
             {
                 case QuestionType.Radio:
-                    questionType = new("radio", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+                    questionType = new("radio", new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 case QuestionType.Checkbox:
-                    questionType = new("checkbox", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+                    questionType = new("checkbox", new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 case QuestionType.Select:
-                    questionType = new("select", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+                    questionType = new("select", new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 default:
                     Console.WriteLine("No matching question type found");
                     break;
             }
 
+            var questionOptions = question.GetProperty("questionOptions");
+
+            if (questionOptions.ValueKind == JsonValueKind.Array && questionType is not null && question.GetProperty("questionType").GetProperty("type").GetString().Trim() == "radio")
+            {
+                bool customValueExists = questionOptions.EnumerateArray().Any(CustomValueExists);
+
+                if (customValueExists)
+                {
+                    XAttribute attribute = new("values", "order");
+
+                    questionType.Add(attribute);
+                }
+            }
+
             return questionType;
+        }
+
+        private static bool CustomValueExists(JsonElement element)
+        {
+            JsonObject obj = JsonNode.Parse(element.ToString()).AsObject();
+
+            string optionValue = (string)obj["value"];
+
+            return optionValue != null;
         }
 
         private static async Task<string?> GetJsonDataFromApi(string apiUrl)
