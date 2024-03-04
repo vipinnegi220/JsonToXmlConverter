@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Xml.Linq;
 
 namespace JsonToXmlConverter
@@ -9,7 +10,7 @@ namespace JsonToXmlConverter
         {
             try
             {
-                string jsonData = await GetJsonDataFromApi(apiUrl);
+                string? jsonData = await GetJsonDataFromApi(apiUrl);
 
                 if (jsonData != null)
                 {
@@ -18,40 +19,18 @@ namespace JsonToXmlConverter
                     if (jsonDocument.RootElement.ValueKind == JsonValueKind.Array)
                     {
                         XDocument xmlDocument = new();
+
                         XElement rootElementXml = new("root");
 
                         foreach (var question in jsonDocument.RootElement.EnumerateArray())
                         {
-                            XElement xElement = GetQuestionTypeElement(question);
+                            XElement? xElement = GetQuestionTypeElement(question);
 
-                            xElement.Add(new XElement("title", question.GetProperty("title").GetString().Trim()));
+                            xElement?.Add(new XElement("title", question.GetProperty("title").GetString().Trim()));
 
-                            // Ensure both opening and closing tags for <comment>
-                            string commentText = question.GetProperty("instructionText").GetString().Trim();
+                            AddInstructionText(question, xElement);
 
-                            XElement commentElement = new("comment");
-
-                            if (!string.IsNullOrEmpty(commentText))
-                            {
-                                commentElement.Value = commentText;
-                            }
-
-                            xElement.Add(commentElement);
-
-                            var questionOptions = question.GetProperty("questionOptions");
-
-                            if (questionOptions.ValueKind == JsonValueKind.Array)
-                            {
-                                foreach (var option in questionOptions.EnumerateArray())
-                                {
-                                    XElement rowElement = new("row", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
-                                    {
-                                        Value = option.GetProperty("optionText").GetString().Trim()
-                                    };
-
-                                    xElement.Add(rowElement);
-                                }
-                            }
+                            AddQuestionOptions(question, xElement);
 
                             rootElementXml.Add(xElement);
 
@@ -80,28 +59,84 @@ namespace JsonToXmlConverter
             }
         }
 
-        private static XElement GetQuestionTypeElement(JsonElement item)
+        private static void AddQuestionOptions(JsonElement question, XElement? xElement)
         {
-            return new("radio", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+            var questionOptions = question.GetProperty("questionOptions");
+
+            if (questionOptions.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var option in questionOptions.EnumerateArray())
+                {
+                    XElement element = AddRow(option);
+
+                    xElement?.Add(element);
+                }
+            }
         }
 
-        private static async Task<string> GetJsonDataFromApi(string apiUrl)
+        private static XElement AddRow(JsonElement option)
+        {
+            JsonObject obj = JsonNode.Parse(option.ToString()).AsObject();
+
+            bool isRow = (bool)obj["isRow"];
+
+            return new(isRow ? "row" : "col", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
+            {
+                Value = option.GetProperty("optionText").GetString().Trim()
+            };
+        }
+
+        private static void AddInstructionText(JsonElement question, XElement? xElement)
+        {
+            string commentText = question.GetProperty("instructionText").GetString().Trim();
+
+            XElement commentElement = new("comment");
+
+            if (!string.IsNullOrEmpty(commentText))
+            {
+                commentElement.Add(new XElement("em"));
+
+                commentElement.Value = commentText;
+            }
+
+            xElement?.Add(commentElement);
+        }
+
+        private static XElement? GetQuestionTypeElement(JsonElement item)
+        {
+            XElement? questionType = null;
+
+            switch (item.GetProperty("questionType").GetProperty("type").GetString().Trim())
+            {
+                case QuestionType.Radio:
+                    questionType = new("radio", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+                    break;
+                case QuestionType.Checkbox:
+                    questionType = new("checkbox", new XAttribute("label", item.GetProperty("label").GetString().Trim()));
+                    break;
+                default:
+                    Console.WriteLine("No matching question type found");
+                    break;
+            }
+
+            return questionType;
+        }
+
+        private static async Task<string?> GetJsonDataFromApi(string apiUrl)
         {
             try
             {
-                using (HttpClient httpClient = new())
-                {
-                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+                using HttpClient httpClient = new();
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return await response.Content.ReadAsStringAsync();
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Error: {response.StatusCode}");
-                        return null;
-                    }
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode}");
+                    return null;
                 }
             }
             catch (Exception ex)
