@@ -66,19 +66,20 @@ namespace JsonToXmlConverter
             XAttribute builderCompatible = new("builderCompatible", "1");
             XAttribute mobileDevices = new("mobileDevices", "smartphone,tablet,desktop");
             XAttribute secure = new("secure", "1");
-            XAttribute disableBackButton = new("ss:disableBackButton", "1");
-            XAttribute enableNavigation = new("ss:enableNavigation", "0");
-            XAttribute hideProgressBar = new("ss:hideProgressBar", "0");
+            // XAttribute disableBackButton = new("ss:disableBackButton", "1");
+            // XAttribute enableNavigation = new("ss:enableNavigation", "0");
+            // XAttribute hideProgressBar = new("ss:hideProgressBar", "0");
             XAttribute version = new("version", "3");
 
             rootElement.Add(autoSaveKey);
             rootElement.Add(builderCompatible);
             rootElement.Add(mobileDevices);
             rootElement.Add(secure);
-            rootElement.Add(disableBackButton);
-            rootElement.Add(enableNavigation);
-            rootElement.Add(hideProgressBar);
+            // rootElement.Add(disableBackButton);
+            // rootElement.Add(enableNavigation);
+            // rootElement.Add(hideProgressBar);
             rootElement.Add(version);
+            rootElement.Add(new XElement("suspend"));
 
             return rootElement;
         }
@@ -98,6 +99,10 @@ namespace JsonToXmlConverter
             }
         }
 
+        //TODO: have to handle case for select where row would come as choice
+        //TODO: in case of 2 dimenensional question we have to give column values instead of rows
+        //TODO: in caes of 2 dimensional questions we have to bold the columns and not rows
+        //TODO: in cases of 2 dimensional questions we don't need values="order" attribute getting added to the question type.
         private static XElement AddRow(JsonElement option)
         {
             JsonObject obj = JsonNode.Parse(option.ToString()).AsObject();
