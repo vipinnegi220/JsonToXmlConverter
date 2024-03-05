@@ -92,7 +92,7 @@ namespace JsonToXmlConverter
             {
                 foreach (var option in questionOptions.EnumerateArray())
                 {
-                    XElement element = AddRow(option);
+                    XElement element = AddRow(question, option);
 
                     xElement?.Add(element);
                 }
@@ -101,12 +101,17 @@ namespace JsonToXmlConverter
 
         //TODO: have to handle case for select where row would come as choice
         //TODO: in caes of 2 dimensional questions we have to bold the columns and not rows
-        private static XElement AddRow(JsonElement option)
+        private static XElement AddRow(JsonElement quesetion, JsonElement option)
         {
             JsonObject obj = JsonNode.Parse(option.ToString()).AsObject();
 
             bool isRow = (bool)obj["isRow"];
             string optionValue = (string)obj["value"];
+
+            if (quesetion.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Select)
+            {
+                return SelectQuestionType(quesetion, option, optionValue);
+            }
 
             if (optionValue != null)
             {
@@ -130,6 +135,23 @@ namespace JsonToXmlConverter
             {
                 Value = option.GetProperty("optionText").GetString().Trim()
             };
+        }
+
+        private static XElement SelectQuestionType(JsonElement quesetion, JsonElement option, string? optionValue)
+        {
+            if (optionValue != null)
+            {
+                return new("choice", new XAttribute("label", option.GetProperty("label").GetString().Trim()), new XAttribute("value", option.GetProperty("value").GetString().Trim()))
+                {
+                    Value = option.GetProperty("optionText").GetString().Trim()
+                };
+            }
+
+            return new("choice", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
+            {
+                Value = option.GetProperty("optionText").GetString().Trim()
+            };
+
         }
 
         private static void AddInstructionText(JsonElement question, XElement? xElement)
@@ -170,7 +192,7 @@ namespace JsonToXmlConverter
 
             var questionOptions = question.GetProperty("questionOptions");
 
-            if (questionOptions.ValueKind == JsonValueKind.Array && questionType is not null && question.GetProperty("questionType").GetProperty("type").GetString().Trim() == "radio")
+            if (questionOptions.ValueKind == JsonValueKind.Array && questionType is not null && (question.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Radio || question.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Select))
             {
                 bool customValueExists = questionOptions.EnumerateArray().Any(CustomValueExists);
 
