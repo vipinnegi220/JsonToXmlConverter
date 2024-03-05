@@ -100,9 +100,7 @@ namespace JsonToXmlConverter
         }
 
         //TODO: have to handle case for select where row would come as choice
-        //TODO: in case of 2 dimenensional question we have to give column values instead of rows
         //TODO: in caes of 2 dimensional questions we have to bold the columns and not rows
-        //TODO: in cases of 2 dimensional questions we don't need values="order" attribute getting added to the question type.
         private static XElement AddRow(JsonElement option)
         {
             JsonObject obj = JsonNode.Parse(option.ToString()).AsObject();
@@ -121,7 +119,7 @@ namespace JsonToXmlConverter
                 }
                 else
                 {
-                    return new("col", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
+                    return new("col", new XAttribute("label", option.GetProperty("label").GetString().Trim()), new XAttribute("value", option.GetProperty("value").GetString().Trim()))
                     {
                         Value = option.GetProperty("optionText").GetString().Trim()
                     };
