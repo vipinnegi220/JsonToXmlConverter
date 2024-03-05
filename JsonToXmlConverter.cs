@@ -180,7 +180,7 @@ namespace JsonToXmlConverter
                     questionType = new(QuestionType.Radio, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 case QuestionType.Checkbox:
-                    questionType = new(QuestionType.Checkbox, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Checkbox, new XAttribute("label", question.GetProperty("label").GetString().Trim()), new XAttribute("atleast", "1"));
                     break;
                 case QuestionType.Select:
                     questionType = new(QuestionType.Select, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
