@@ -20,25 +20,24 @@ namespace JsonToXmlConverter
                     {
                         XDocument xmlDocument = new();
 
-                        XElement rootElementXml = new("root");
+                        XElement rootSurveyElement = GetRootSurveyElement();
 
-                        foreach (var question in jsonDocument.RootElement.EnumerateArray())
+                        foreach (var element in jsonDocument.RootElement.EnumerateArray())
                         {
-                            XElement? xElement = GetQuestionTypeElement(question);
+                            XElement? question = GetQuestionTypeElement(element);
 
-                            xElement?.Add(new XElement("title", new XElement("strong", question.GetProperty("title").GetString().Trim())));
+                            question?.Add(new XElement("title", new XElement("strong", element.GetProperty("title").GetString().Trim())));
 
-                            AddInstructionText(question, xElement);
+                            AddInstructionText(element, question);
 
-                            AddQuestionOptions(question, xElement);
+                            AddQuestionOptions(element, question);
 
-                            rootElementXml.Add(xElement);
+                            rootSurveyElement.Add(question);
 
-                            // Add <suspend> element after each <radio> element
-                            rootElementXml.Add(new XElement("suspend"));
+                            rootSurveyElement.Add(new XElement("suspend"));
                         }
 
-                        xmlDocument.Add(rootElementXml);
+                        xmlDocument.Add(rootSurveyElement);
                         xmlDocument.Save(outputXmlFilePath);
 
                         Console.WriteLine($"Conversion completed. Check {outputXmlFilePath} for the result.");
@@ -57,6 +56,31 @@ namespace JsonToXmlConverter
             {
                 Console.WriteLine($"Error during conversion: {ex.Message}");
             }
+        }
+
+        private static XElement GetRootSurveyElement()
+        {
+            XElement rootElement = new("survey");
+
+            XAttribute autoSaveKey = new("autosaveKey", "uid");
+            XAttribute builderCompatible = new("builderCompatible", "1");
+            XAttribute mobileDevices = new("mobileDevices", "smartphone,tablet,desktop");
+            XAttribute secure = new("secure", "1");
+            XAttribute disableBackButton = new("ss:disableBackButton", "1");
+            XAttribute enableNavigation = new("ss:enableNavigation", "0");
+            XAttribute hideProgressBar = new("ss:hideProgressBar", "0");
+            XAttribute version = new("version", "3");
+
+            rootElement.Add(autoSaveKey);
+            rootElement.Add(builderCompatible);
+            rootElement.Add(mobileDevices);
+            rootElement.Add(secure);
+            rootElement.Add(disableBackButton);
+            rootElement.Add(enableNavigation);
+            rootElement.Add(hideProgressBar);
+            rootElement.Add(version);
+
+            return rootElement;
         }
 
         private static void AddQuestionOptions(JsonElement question, XElement? xElement)
@@ -83,10 +107,20 @@ namespace JsonToXmlConverter
 
             if (optionValue != null)
             {
-                return new(isRow ? "row" : "col", new XAttribute("label", option.GetProperty("label").GetString().Trim()), new XAttribute("value", option.GetProperty("value").GetString().Trim()))
+                if (isRow)
                 {
-                    Value = option.GetProperty("optionText").GetString().Trim()
-                };
+                    return new("row", new XAttribute("label", option.GetProperty("label").GetString().Trim()), new XAttribute("value", option.GetProperty("value").GetString().Trim()))
+                    {
+                        Value = option.GetProperty("optionText").GetString().Trim()
+                    };
+                }
+                else
+                {
+                    return new("col", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
+                    {
+                        Value = option.GetProperty("optionText").GetString().Trim()
+                    };
+                }
             }
 
             return new(isRow ? "row" : "col", new XAttribute("label", option.GetProperty("label").GetString().Trim()))
@@ -118,13 +152,13 @@ namespace JsonToXmlConverter
             switch (question.GetProperty("questionType").GetProperty("type").GetString().Trim())
             {
                 case QuestionType.Radio:
-                    questionType = new("radio", new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Radio, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 case QuestionType.Checkbox:
-                    questionType = new("checkbox", new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Checkbox, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 case QuestionType.Select:
-                    questionType = new("select", new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Select, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
                     break;
                 default:
                     Console.WriteLine("No matching question type found");
