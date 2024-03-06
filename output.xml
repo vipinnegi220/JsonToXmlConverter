@@ -51,57 +51,57 @@
     <comment>
       <em>Please select one</em>
     </comment>
-    <col label="ch1">Alabama</col>
-    <col label="ch2">Alaska</col>
-    <col label="ch3">Arizona</col>
-    <col label="ch4">Arkansas</col>
-    <col label="ch5">California</col>
-    <col label="ch6">Colorado</col>
-    <col label="ch7">Connecticut</col>
-    <col label="ch8">Delaware</col>
-    <col label="ch9">District of Columbia</col>
-    <col label="ch10">Florida</col>
-    <col label="ch11">Georgia</col>
-    <col label="ch12">Hawaii</col>
-    <col label="ch13">Idaho</col>
-    <col label="ch14">Illinois</col>
-    <col label="ch15">Indiana</col>
-    <col label="ch16">Iowa</col>
-    <col label="ch17">Kansas</col>
-    <col label="ch18">Kentucky</col>
-    <col label="ch19">Louisiana</col>
-    <col label="ch20">Maine</col>
-    <col label="ch21">Maryland</col>
-    <col label="ch22">Massachusetts</col>
-    <col label="ch23">Michigan</col>
-    <col label="ch24">Minnesota</col>
-    <col label="ch25">Mississippi</col>
-    <col label="ch26">Missouri</col>
-    <col label="ch27">Montana</col>
-    <col label="ch28">Nebraska</col>
-    <col label="ch29">Nevada</col>
-    <col label="ch30">New Hampshire</col>
-    <col label="ch31">New Jersey</col>
-    <col label="ch32">New Mexico</col>
-    <col label="ch33">New York</col>
-    <col label="ch34">North Carolina</col>
-    <col label="ch35">North Dakota</col>
-    <col label="ch36">Ohio</col>
-    <col label="ch37">Oklahoma</col>
-    <col label="ch38">Oregon</col>
-    <col label="ch39">Pennsylvania</col>
-    <col label="ch40">Rhode Island</col>
-    <col label="ch41">South Carolina</col>
-    <col label="ch42">South Dakota</col>
-    <col label="ch43">Tennessee</col>
-    <col label="ch44">Texas</col>
-    <col label="ch45">Utah</col>
-    <col label="ch46">Vermont</col>
-    <col label="ch47">Virginia</col>
-    <col label="ch48">Washington</col>
-    <col label="ch49">West Virginia</col>
-    <col label="ch50">Wisconsin</col>
-    <col label="ch51">Wyoming</col>
+    <choice label="ch1">Alabama</choice>
+    <choice label="ch2">Alaska</choice>
+    <choice label="ch3">Arizona</choice>
+    <choice label="ch4">Arkansas</choice>
+    <choice label="ch5">California</choice>
+    <choice label="ch6">Colorado</choice>
+    <choice label="ch7">Connecticut</choice>
+    <choice label="ch8">Delaware</choice>
+    <choice label="ch9">District of Columbia</choice>
+    <choice label="ch10">Florida</choice>
+    <choice label="ch11">Georgia</choice>
+    <choice label="ch12">Hawaii</choice>
+    <choice label="ch13">Idaho</choice>
+    <choice label="ch14">Illinois</choice>
+    <choice label="ch15">Indiana</choice>
+    <choice label="ch16">Iowa</choice>
+    <choice label="ch17">Kansas</choice>
+    <choice label="ch18">Kentucky</choice>
+    <choice label="ch19">Louisiana</choice>
+    <choice label="ch20">Maine</choice>
+    <choice label="ch21">Maryland</choice>
+    <choice label="ch22">Massachusetts</choice>
+    <choice label="ch23">Michigan</choice>
+    <choice label="ch24">Minnesota</choice>
+    <choice label="ch25">Mississippi</choice>
+    <choice label="ch26">Missouri</choice>
+    <choice label="ch27">Montana</choice>
+    <choice label="ch28">Nebraska</choice>
+    <choice label="ch29">Nevada</choice>
+    <choice label="ch30">New Hampshire</choice>
+    <choice label="ch31">New Jersey</choice>
+    <choice label="ch32">New Mexico</choice>
+    <choice label="ch33">New York</choice>
+    <choice label="ch34">North Carolina</choice>
+    <choice label="ch35">North Dakota</choice>
+    <choice label="ch36">Ohio</choice>
+    <choice label="ch37">Oklahoma</choice>
+    <choice label="ch38">Oregon</choice>
+    <choice label="ch39">Pennsylvania</choice>
+    <choice label="ch40">Rhode Island</choice>
+    <choice label="ch41">South Carolina</choice>
+    <choice label="ch42">South Dakota</choice>
+    <choice label="ch43">Tennessee</choice>
+    <choice label="ch44">Texas</choice>
+    <choice label="ch45">Utah</choice>
+    <choice label="ch46">Vermont</choice>
+    <choice label="ch47">Virginia</choice>
+    <choice label="ch48">Washington</choice>
+    <choice label="ch49">West Virginia</choice>
+    <choice label="ch50">Wisconsin</choice>
+    <choice label="ch51">Wyoming</choice>
   </select>
   <suspend />
   <radio label="S5" values="order">
@@ -248,142 +248,412 @@
     <col label="c7" value="7">Agree Strongly</col>
   </radio>
   <suspend />
-  <checkbox label="Q6">
+  <checkbox label="Q6" atleast="1">
     <title>
       <strong>Community Banks and Credit Unions want the opportunity to work with boutique firms that can help elevate their strategies to compete more effectively and win greater share in market</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q7">
+  <checkbox label="Q7" atleast="1">
     <title>
       <strong>I would choose a financial services consulting/fintech firm who viewed itself as a partner versus a provider and valued the relationship over the contract</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q8">
+  <checkbox label="Q8" atleast="1">
     <title>
       <strong>I want a financial services consulting/fintech provider that helps me create more innovative and education-based banking products and services that are self-directed for customers</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q9">
+  <checkbox label="Q9" atleast="1">
     <title>
       <strong>Customized banking solutions designed to meet my customers every need provides significant opportunity for growth</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q10">
+  <checkbox label="Q10" atleast="1">
     <title>
       <strong>Investing in human-led innovation poises financial institutions to both retain and acquire new customers</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q11">
+  <checkbox label="Q11" atleast="1">
     <title>
       <strong>Creating new and more value-delivery based, personalized solutions can help attract new customers</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q12">
+  <checkbox label="Q12" atleast="1">
     <title>
       <strong>Offering people the opportunity to bank differently by reimagining the idea of what a financial institution can be is the key to growth</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q13">
+  <checkbox label="Q13" atleast="1">
     <title>
       <strong>A financial partner respecting its customers data privacy must be a core value proposition</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q14">
+  <checkbox label="Q14" atleast="1">
     <title>
       <strong>Offering the tools which best resonate with each customer is an opportunity for unique personalization</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q15">
+  <checkbox label="Q15" atleast="1">
     <title>
       <strong>People have limited loyalty to brands today and next-gen banks and FinTechs have the opportunity to capitalize on that white space</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q16">
+  <checkbox label="Q16" atleast="1">
     <title>
       <strong>Engagement with younger consumers today in financial services is based on product performance and value delivery</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q17">
+  <checkbox label="Q17" atleast="1">
     <title>
       <strong>Building market share by joining checking and savings to make the best product offering is an appealing offering for customers</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q18">
+  <checkbox label="Q18" atleast="1">
     <title>
       <strong>Now more than ever, I believe understanding our customer's deepest needs is critical for success</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q19">
+  <checkbox label="Q19" atleast="1">
     <title>
       <strong>Community Banks and Credit Unions want the opportunity to have partners that have extensive knowledge and experience in financial services and technology</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q20">
+  <checkbox label="Q20" atleast="1">
     <title>
       <strong>I would choose a financial service consulting firm that can help me solve and execute complex issues and large-scale projects through a combination of both technology and people</strong>
     </title>
     <comment>
       <em>Please choose at least ONE Primary Emotion and at least ONE Secondary Emotion for the statement above:</em>
     </comment>
+    <row label="r1" value="1">Anger</row>
+    <row label="r2" value="2">Fear</row>
+    <row label="r3" value="3">Sadness</row>
+    <row label="r4" value="4">Surprise</row>
+    <row label="r5" value="5">Joy</row>
+    <row label="r6" value="6">Love</row>
+    <row label="r1" value="1">Frustrated</row>
+    <row label="r2" value="2">Apprehensive</row>
+    <row label="r3" value="3">Disappointed</row>
+    <row label="r4" value="4">Valued</row>
+    <row label="r5" value="5">Respected</row>
+    <row label="r6" value="6">Admired</row>
+    <row label="r7" value="7">Resentment</row>
+    <row label="r8" value="8">Afraid</row>
+    <row label="r9" value="9">Pensive</row>
+    <row label="r10" value="10">Astonished</row>
+    <row label="r11" value="11">Optimistic</row>
+    <row label="r12" value="12">Excited</row>
   </checkbox>
   <suspend />
-  <checkbox label="Q21">
+  <checkbox label="Q21" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from elevating their offerings in ways that are data-backed</strong>
     </title>
@@ -392,7 +662,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q22">
+  <checkbox label="Q22" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from elevating their offerings in ways that are customer centric</strong>
     </title>
@@ -401,7 +671,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q23">
+  <checkbox label="Q23" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from their digital channel outperforming their busiest branch</strong>
     </title>
@@ -410,7 +680,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q24">
+  <checkbox label="Q24" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from their data providing them insights as to where and how they could continuously improve their product offerings and delivery channels</strong>
     </title>
@@ -419,7 +689,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q25">
+  <checkbox label="Q25" atleast="1">
     <title>
       <strong>Banks and Credit Unions are currently experiencing data disparity challenges resulting in the inability to mine their data to understand their customers</strong>
     </title>
@@ -428,7 +698,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q26">
+  <checkbox label="Q26" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from having a 360-degree view of their fraud and risk across all products and channels</strong>
     </title>
@@ -437,7 +707,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q27">
+  <checkbox label="Q27" atleast="1">
     <title>
       <strong>Todays customers do not tend to have all of their accounts with one financial institution and Banks and Credit Unions would benefit from being the money movement hub for their customers/members</strong>
     </title>
@@ -446,7 +716,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q28">
+  <checkbox label="Q28" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from their Executive Team seeing each other as the strongest team that they have ever been on and being all in on their mission, vision, and values</strong>
     </title>
@@ -455,7 +725,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q29">
+  <checkbox label="Q29" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from being able to sleep at night knowing that their information security was intentionally designed and implemented to keep bad actors out</strong>
     </title>
@@ -464,7 +734,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q30">
+  <checkbox label="Q30" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from understanding cloud technology its implementation</strong>
     </title>
@@ -473,7 +743,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q31">
+  <checkbox label="Q31" atleast="1">
     <title>
       <strong>Banks and Credit Unions need a better understanding on leveraging APIs to enhance their customers experience and business efficiencies</strong>
     </title>
@@ -482,7 +752,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q32">
+  <checkbox label="Q32" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from having a partner that they know will bring them the latest information on AI, the different technologies behind it, and the most popular uses cases</strong>
     </title>
@@ -491,7 +761,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q33">
+  <checkbox label="Q33" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from a group of partners and peers to use as a sounding board to push beyond what they thought was only possible for a big bank to do</strong>
     </title>
@@ -500,7 +770,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q34">
+  <checkbox label="Q34" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from having a proven partner to create a plan and framework to establish a culture that focuses on collaboration and innovation</strong>
     </title>
@@ -509,7 +779,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q35">
+  <checkbox label="Q35" atleast="1">
     <title>
       <strong>Banks and Credit Unions would benefit from an eCommerce partner with expertise in how to create fully transparent like experiences in a highly regulated, legacy system driven industry</strong>
     </title>
@@ -518,7 +788,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q36">
+  <checkbox label="Q36" atleast="1">
     <title>
       <strong>Brand X helps its clients rethink innovation</strong>
     </title>
@@ -527,7 +797,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q37">
+  <checkbox label="Q37" atleast="1">
     <title>
       <strong>Brand X works to help Banks and Credit Unions transform with an eye on elevating the customer experiences they can offer their consumers and members</strong>
     </title>
@@ -536,7 +806,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q38">
+  <checkbox label="Q38" atleast="1">
     <title>
       <strong>Brand Xs focus is to create artificial intelligence that you can use without the sacrifice of human-touch</strong>
     </title>
@@ -545,7 +815,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q39">
+  <checkbox label="Q39" atleast="1">
     <title>
       <strong>Brand X works with its clients to create brands that resonate with consumers in ways that drive acquisition and retention</strong>
     </title>
@@ -554,7 +824,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q40">
+  <checkbox label="Q40" atleast="1">
     <title>
       <strong>At Brand X we work hard to help our clients ensure that there is tight alignment between brand and products</strong>
     </title>
@@ -563,7 +833,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q41">
+  <checkbox label="Q41" atleast="1">
     <title>
       <strong>Business planning and strategy are two key areas Brand X focuses on with Banks and Credit Unions</strong>
     </title>
@@ -572,7 +842,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q42">
+  <checkbox label="Q42" atleast="1">
     <title>
       <strong>At Brand X we are always working with our clients to uplevel their offerings in the area of cards and payments</strong>
     </title>
@@ -581,7 +851,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q43">
+  <checkbox label="Q43" atleast="1">
     <title>
       <strong>Data and insights drives the thinking Brand X uses to help the Banks and Credit Unions they serve to seamlessly transform and grow</strong>
     </title>
@@ -590,7 +860,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q44">
+  <checkbox label="Q44" atleast="1">
     <title>
       <strong>At Brand X, we work closely with our clients to build deposit strategies that align with improved performance</strong>
     </title>
@@ -599,7 +869,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q45">
+  <checkbox label="Q45" atleast="1">
     <title>
       <strong>At Brand X, we believe that helping the Banks and Credit Unions of tomorrow will come down to superior digital experiences</strong>
     </title>
@@ -608,7 +878,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q46">
+  <checkbox label="Q46" atleast="1">
     <title>
       <strong>Unmatched strategy and expertise are the touchstones Brand X uses to help is clients not only succeed butlead</strong>
     </title>
@@ -617,7 +887,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q47">
+  <checkbox label="Q47" atleast="1">
     <title>
       <strong>Creating winning cultures is a critical component to the success of Banks and Credit Unions and Brand X uses a mix of innovation, strategy, and planning to help its clients succeed in doing so</strong>
     </title>
@@ -626,7 +896,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q48">
+  <checkbox label="Q48" atleast="1">
     <title>
       <strong>At Brand X, rethinking experience isn't a moment. It's something that must happen perpetually</strong>
     </title>
@@ -635,7 +905,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q49">
+  <checkbox label="Q49" atleast="1">
     <title>
       <strong>Technology strategy is a major focus of Brand X when helping any bank or credit union future proof itself for long term growth and success</strong>
     </title>
@@ -644,7 +914,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q50">
+  <checkbox label="Q50" atleast="1">
     <title>
       <strong>Brand X takes a customer first approach by understanding what its customers want and innovating to meet their needs</strong>
     </title>
@@ -653,7 +923,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q51">
+  <checkbox label="Q51" atleast="1">
     <title>
       <strong>Brand X provides customers withthe ability todevelop andgrow their productportfolios inalignmentwith the brand and ever evolving customerneeds</strong>
     </title>
@@ -662,7 +932,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q52">
+  <checkbox label="Q52" atleast="1">
     <title>
       <strong>Brand X provides the clarity customers need to develop actionable strategies through positive group alignment and laser focused prioritization to take the organization into the future</strong>
     </title>
@@ -671,7 +941,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q53">
+  <checkbox label="Q53" atleast="1">
     <title>
       <strong>Brand Xsoffers a deep set of lived industryexperience,providingunique benefitand outcomes that can help their financial institution differentiate itself</strong>
     </title>
@@ -680,7 +950,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q54">
+  <checkbox label="Q54" atleast="1">
     <title>
       <strong>Brand X understands how prioritization is often difficult for organizations tobalancecompeting priorities and is well positioned to help navigate complex choices</strong>
     </title>
@@ -689,7 +959,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q55">
+  <checkbox label="Q55" atleast="1">
     <title>
       <strong>Brand X helps Banks and Credit Unions craft payment strategies that deepen loyalty beyond the transactional relationship</strong>
     </title>
@@ -698,7 +968,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q56">
+  <checkbox label="Q56" atleast="1">
     <title>
       <strong>Brand X provides data expertise to capture, normalize, maximizeand enrich my organizations data. This allows my Bank or Credit Union to be in the best position to uncover comprehensiveand actionableinsights related to my customer.</strong>
     </title>
@@ -707,7 +977,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q57">
+  <checkbox label="Q57" atleast="1">
     <title>
       <strong>Brand X helps Banks and Credit Unions provide deeper understanding of the customer and reimagine the possible through AI driven emotional intelligence and human centered design</strong>
     </title>
@@ -716,7 +986,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q58">
+  <checkbox label="Q58" atleast="1">
     <title>
       <strong>Brand X hasunique industry knowledge that can drive best in class digital strategies to help my organizationachievehighly personalized banking experiences</strong>
     </title>
@@ -725,7 +995,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q59">
+  <checkbox label="Q59" atleast="1">
     <title>
       <strong>Brand X can help my organizationoptimizeourcurrentdigital banking solutionsby making short-term and long-term recommendationsto improve the experience</strong>
     </title>
@@ -734,7 +1004,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q60">
+  <checkbox label="Q60" atleast="1">
     <title>
       <strong>Brand X helps Banks and Credit Unions create a modernized approach to driving a culture of innovation that delivers skills-based empowerment for staff and collaboration techniques rooted in human centered design</strong>
     </title>
@@ -743,7 +1013,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q61">
+  <checkbox label="Q61" atleast="1">
     <title>
       <strong>Brand X helps deliverorganization wide strategies and tools todeliver efficiency toa robust set of bankingprocesses for bothinternal and external customers</strong>
     </title>
@@ -752,7 +1022,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q62">
+  <checkbox label="Q62" atleast="1">
     <title>
       <strong>Brand X helps its clients select and implement the latest technology to support next generation requirements</strong>
     </title>
@@ -761,7 +1031,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q63">
+  <checkbox label="Q63" atleast="1">
     <title>
       <strong>Brand X understands the complex realities of the financial institutiontechnical landscape and is well positioned to outline the vision necessary to drive thegreatest value through partnership, investments and incremental enhancements</strong>
     </title>
@@ -770,7 +1040,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q64">
+  <checkbox label="Q64" atleast="1">
     <title>
       <strong>Brand X helps its clientsexpand my peer network by bringing together a community of curious andtalentedthought leaders from across theindustry to discuss successes, failures, passions and pursuits</strong>
     </title>
@@ -779,7 +1049,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q65">
+  <checkbox label="Q65" atleast="1">
     <title>
       <strong>Brand X helps its clientsbetter understandindustry trends based on leveraging data science, emotional index scoresand market drivers to help menavigate ever-changing trends</strong>
     </title>
@@ -788,7 +1058,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q66">
+  <checkbox label="Q66" atleast="1">
     <title>
       <strong>Humanatech</strong>
     </title>
@@ -797,7 +1067,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q67">
+  <checkbox label="Q67" atleast="1">
     <title>
       <strong>Financial Advisory Services Transformation (FAST)</strong>
     </title>
@@ -806,7 +1076,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q68">
+  <checkbox label="Q68" atleast="1">
     <title>
       <strong>Butterfly Advisory</strong>
     </title>
@@ -815,7 +1085,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q69">
+  <checkbox label="Q69" atleast="1">
     <title>
       <strong>Agility Advisory</strong>
     </title>
@@ -824,7 +1094,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q70">
+  <checkbox label="Q70" atleast="1">
     <title>
       <strong>Monarch Financial</strong>
     </title>
@@ -833,7 +1103,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q71">
+  <checkbox label="Q71" atleast="1">
     <title>
       <strong>Monarch Advisory</strong>
     </title>
@@ -842,7 +1112,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q72">
+  <checkbox label="Q72" atleast="1">
     <title>
       <strong>Finoverse</strong>
     </title>
@@ -851,7 +1121,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q73">
+  <checkbox label="Q73" atleast="1">
     <title>
       <strong>Excelsis Consulting</strong>
     </title>
@@ -860,7 +1130,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q74">
+  <checkbox label="Q74" atleast="1">
     <title>
       <strong>Argentaria Advisory</strong>
     </title>
@@ -869,7 +1139,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q75">
+  <checkbox label="Q75" atleast="1">
     <title>
       <strong>Argentarium</strong>
     </title>
@@ -878,7 +1148,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q76">
+  <checkbox label="Q76" atleast="1">
     <title>
       <strong>Peregrine Solutions</strong>
     </title>
@@ -887,7 +1157,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q77">
+  <checkbox label="Q77" atleast="1">
     <title>
       <strong>Peregrine Advisory</strong>
     </title>
@@ -896,7 +1166,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q78">
+  <checkbox label="Q78" atleast="1">
     <title>
       <strong>Occams Vanguard</strong>
     </title>
@@ -905,7 +1175,7 @@
     </comment>
   </checkbox>
   <suspend />
-  <checkbox label="Q79">
+  <checkbox label="Q79" atleast="1">
     <title>
       <strong>Essentia Advisory</strong>
     </title>
