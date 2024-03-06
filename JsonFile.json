@@ -1,0 +1,30 @@
+[
+    {
+      "type": "text",
+      "label": "S4",
+      "optional": "0",
+      "verify": "zipcode",
+      "title": "What is your zip code?",
+      "comment": "Please enter."
+    },
+    {
+      "type": "number",
+      "label": "Q14_2",
+      "optional": "0",
+      "size": "5",
+      "verify": "range(1, 1000)",
+      "title": "How many GI flexible endoscopes do you have at hand in your primary facility?",
+      "comment": "Please enter a number",
+      "noanswer": {
+        "label": "r1",
+        "value": "I am not aware"
+      }
+    },
+    {
+      "type": "textarea",
+      "label": "Q16_Other",
+      "title": "What is the name of the software?",
+      "validate": "if Q16_1.r1 and Q16_Other.val == '':\n  error(res.Q6aerror)"
+    }
+  ]
+  

@@ -1,7 +1,7 @@
-public static class QuestionType
+public static class QuestionTypes
 {
-    public const string Radio = "radio";
-    public const string Checkbox = "checkbox";
-    public const string Select = "select";
-    public const string Grid = "grid";
+    public const string Text = "text";
+    public const string Number = "number";
+    public const string Textarea = "textarea";
+    // Add more types as needed
 }

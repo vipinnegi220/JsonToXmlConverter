@@ -3,53 +3,48 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 
 namespace JsonToXmlConverter
 {
     public class JsonToXmlConverter
     {
-        public static async Task ConvertJsonArrayToXml(string apiUrl, string outputXmlFilePath)
+        public static async Task ConvertJsonArrayToXml(string jsonFilePath, string outputXmlFilePath)
         {
             try
             {
-                string? jsonData = await GetJsonDataFromApi(apiUrl);
+                string? jsonData = await GetJsonDataFromFile(jsonFilePath);
 
                 if (jsonData != null)
                 {
                     JsonDocument jsonDocument = JsonDocument.Parse(jsonData);
 
-                    XDocument xmlDocument = new XDocument();
-
-                    switch (jsonDocument.RootElement.GetProperty("questionType").GetProperty("type").GetString().Trim())
+                    if (jsonDocument.RootElement.ValueKind == JsonValueKind.Array)
                     {
-                        case QuestionType.Radio:
-                            XElement radioElement = GetRadioElement(jsonDocument.RootElement);
-                            xmlDocument.Add(radioElement);
-                            break;
-                        case QuestionType.Checkbox:
-                            XElement checkboxElement = GetCheckboxElement(jsonDocument.RootElement);
-                            xmlDocument.Add(checkboxElement);
-                            break;
-                        case QuestionType.Select:
-                            XElement selectElement = GetSelectElement(jsonDocument.RootElement);
-                            xmlDocument.Add(selectElement);
-                            break;
-                        case QuestionType.Grid:
-                            XElement gridElement = GetGridElement(jsonDocument.RootElement);
-                            xmlDocument.Add(gridElement);
-                            break;
-                        default:
-                            Console.WriteLine("No matching question type found");
-                            break;
-                    }
+                        XDocument xmlDocument = new XDocument(); // Create a new XDocument
 
-                    xmlDocument.Save(outputXmlFilePath);
-                    Console.WriteLine($"Conversion completed. Check {outputXmlFilePath} for the result.");
+                        // Create a root element for the XML document
+                        XElement surveyElement = new XElement("survey");
+
+                        foreach (JsonElement questionElement in jsonDocument.RootElement.EnumerateArray())
+                        {
+                            XElement questionXml = GetQuestionXml(questionElement);
+                            surveyElement.Add(questionXml);
+                        }
+
+                        // Add the root element to the XML document
+                        xmlDocument.Add(surveyElement);
+
+                        xmlDocument.Save(outputXmlFilePath);
+                        Console.WriteLine($"Conversion completed. Check {outputXmlFilePath} for the result.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The JSON data should be an array of objects.");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Unable to fetch JSON data from the API.");
+                    Console.WriteLine("Unable to read JSON data from the file.");
                 }
             }
             catch (Exception ex)
@@ -58,79 +53,61 @@ namespace JsonToXmlConverter
             }
         }
 
-        private static XElement GetRadioElement(JsonElement question)
+        private static XElement GetQuestionXml(JsonElement question)
         {
-            XElement radioElement = new XElement(QuestionType.Radio, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
-            // Add radio-specific attributes or elements here
-            return radioElement;
-        }
+            string questionType = question.GetProperty("type").GetString().Trim();
+            XElement questionXml = new XElement(questionType);
 
-        private static XElement GetCheckboxElement(JsonElement question)
-        {
-            XElement checkboxElement = new XElement(QuestionType.Checkbox, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
-            // Add checkbox-specific attributes or elements here
-            return checkboxElement;
-        }
+            // Add common attributes for all question types
+            questionXml.Add(new XAttribute("label", question.GetProperty("label").GetString().Trim()));
 
-        private static XElement GetSelectElement(JsonElement question)
-        {
-            XElement selectElement = new XElement(QuestionType.Select, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
-            // Add select-specific attributes or elements here
-            return selectElement;
-        }
-
-        private static XElement GetGridElement(JsonElement question)
-        {
-            XElement gridElement = new XElement("grid");
-            // Add any attributes or elements specific to the grid-type question
-            AddGridOptions(question, gridElement);
-            return gridElement;
-        }
-
-        private static void AddGridOptions(JsonElement question, XElement? xElement)
-        {
-            var questionOptions = question.GetProperty("questionOptions");
-
-            if (questionOptions.ValueKind == JsonValueKind.Array)
+            // Add type-specific attributes or elements
+            switch (questionType)
             {
-                foreach (var option in questionOptions.EnumerateArray())
-                {
-                    XElement element = AddGridRow(question, option);
-                    xElement?.Add(element);
-                }
+                case "text":
+                    questionXml.Add(
+                        new XAttribute("optional", question.GetProperty("optional").GetString().Trim()),
+                        new XAttribute("verify", question.GetProperty("verify").GetString().Trim()),
+                        new XElement("title", new XElement("strong", question.GetProperty("title").GetString().Trim())),
+                        new XElement("comment", new XElement("em", question.GetProperty("comment").GetString().Trim()))
+                    );
+                    break;
+
+                case "number":
+                    questionXml.Add(
+                        new XAttribute("optional", question.GetProperty("optional").GetString().Trim()),
+                        new XAttribute("verify", question.GetProperty("verify").GetString().Trim()),
+                        new XElement("title", new XElement("strong", question.GetProperty("title").GetString().Trim())),
+                        new XElement("comment", new XElement("em", question.GetProperty("comment").GetString().Trim()))
+                    );
+                    break;
+
+                case "textarea":
+                    questionXml.Add(
+                        new XElement("title", new XElement("strong", question.GetProperty("title").GetString().Trim())),
+                        new XElement("validate", question.GetProperty("validate").GetString().Trim())
+                    );
+                    break;
+
+                // Add additional cases for other question types if needed
+
+                default:
+                    Console.WriteLine($"Unknown question type: {questionType}");
+                    break;
             }
+
+            return questionXml;
         }
 
-        private static XElement AddGridRow(JsonElement question, JsonElement option)
-        {
-            return new XElement("gridRow",
-                new XAttribute("label", option.GetProperty("label").GetString().Trim()),
-                new XAttribute("value", option.GetProperty("value").GetString().Trim()))
-            {
-                Value = option.GetProperty("optionText").GetString().Trim()
-            };
-        }
-
-        private static async Task<string?> GetJsonDataFromApi(string apiUrl)
+        private static async Task<string?> GetJsonDataFromFile(string jsonFilePath)
         {
             try
             {
-                using HttpClient httpClient = new HttpClient();
-                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return await response.Content.ReadAsStringAsync();
-                }
-                else
-                {
-                    Console.WriteLine($"Error: {response.StatusCode}");
-                    return null;
-                }
+                return System.IO.File.ReadAllText(jsonFilePath);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error reading JSON data from the file: {ex.Message}");
                 return null;
             }
         }
