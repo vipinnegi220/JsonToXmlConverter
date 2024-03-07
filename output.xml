@@ -1,26 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <survey>
-  <text label="S4" optional="0" verify="zipcode">
-    <title>
-      <strong>What is your zip code?</strong>
-    </title>
-    <comment>
-      <em>Please enter.</em>
-    </comment>
-  </text>
-  <number label="Q14_2" optional="0" verify="range(1, 1000)">
-    <title>
-      <strong>How many GI flexible endoscopes do you have at hand in your primary facility?</strong>
-    </title>
-    <comment>
-      <em>Please enter a number</em>
-    </comment>
+  <number label="S1" optional="0" size="25">
+    <title>Which car model do you like? Please mention the model and manufacturing year.</title>
+    <comment>Enter a number</comment>
+    <row label="r1" value="Hyundai">Hyundai</row>
+    <row label="r2" value="Honda">Honda</row>
+    <row label="r3" value="BMW">BMW</row>
+    <row label="c1" value="Model">Model</row>
+    <row label="c2" value="Year">Year</row>
   </number>
-  <textarea label="Q16_Other">
-    <title>
-      <strong>What is the name of the software?</strong>
-    </title>
-    <validate>if Q16_1.r1 and Q16_Other.val == '':
-  error(res.Q6aerror)</validate>
-  </textarea>
 </survey>

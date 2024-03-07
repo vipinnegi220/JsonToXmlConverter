@@ -1,30 +1,27 @@
 [
     {
-      "type": "text",
-      "label": "S4",
-      "optional": "0",
-      "verify": "zipcode",
-      "title": "What is your zip code?",
-      "comment": "Please enter."
-    },
-    {
-      "type": "number",
-      "label": "Q14_2",
-      "optional": "0",
-      "size": "5",
-      "verify": "range(1, 1000)",
-      "title": "How many GI flexible endoscopes do you have at hand in your primary facility?",
-      "comment": "Please enter a number",
-      "noanswer": {
-        "label": "r1",
-        "value": "I am not aware"
+      "id": 1,
+      "title": "Which car model do you like? Please mention the model and manufacturing year.",
+      "comment": "Be specific",
+      "label": "S1",
+      "hello":1,
+      "orderSequence": 1,
+      "isMandatory": true,
+      "size": "25",
+      "instructionText": "Please select one",
+      "questionType": {
+          "id": 1,
+          "type": "number"
+      },
+      "questionTypeId": 1,
+      "surveyId": 1,
+      "options": {
+          "r1": { "value": "Hyundai", "isRow": 1 },
+          "r2": { "value": "Honda", "isRow": 1 },
+          "r3": { "value": "BMW", "isRow": 1 },
+          "c1": { "value": "Model", "isRow": 0 },
+          "c2": { "value": "Year", "isRow": 0 }
       }
-    },
-    {
-      "type": "textarea",
-      "label": "Q16_Other",
-      "title": "What is the name of the software?",
-      "validate": "if Q16_1.r1 and Q16_Other.val == '':\n  error(res.Q6aerror)"
-    }
+  }
   ]
   

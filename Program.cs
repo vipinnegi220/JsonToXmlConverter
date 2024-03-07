@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 class Program
 {
-    static async Task Main()
+    static void Main()
     {
-        string inputJsonFilePath = "JsonFile.json";
-        string outputXmlFilePath = "output.xml";
+        // Specify the path to your JSON file
+        string jsonFilePath = "JsonFile.json";
 
-        await JsonToXmlConverter.JsonToXmlConverter.ConvertJsonArrayToXml(inputJsonFilePath, outputXmlFilePath);
+        // Specify the path for the output XML file
+        string xmlOutputPath = "output.xml";
 
-        Console.WriteLine("Press any key to exit...");
-        Console.ReadKey();
+        // Convert JSON to XML
+        JsonToXmlConverter.JsonToXmlConverter.ConvertJsonFileToXml(jsonFilePath, xmlOutputPath);
+
+        Console.WriteLine($"Conversion completed. XML file saved at: {xmlOutputPath}");
     }
 }
