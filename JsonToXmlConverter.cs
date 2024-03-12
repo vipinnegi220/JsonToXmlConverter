@@ -24,7 +24,7 @@ namespace JsonToXmlConverter
 
                         foreach (var element in jsonDocument.RootElement.EnumerateArray())
                         {
-                            XElement? question = GetQuestionTypeElement(element);
+                            XElement? question = GetQuestionBasedOnType(element);
 
                             question?.Add(new XElement("title", new XElement("strong", element.GetProperty("title").GetString().Trim())));
 
@@ -170,37 +170,37 @@ namespace JsonToXmlConverter
             xElement?.Add(commentElement);
         }
 
-        private static XElement? GetQuestionTypeElement(JsonElement question)
+        private static XElement? GetQuestionBasedOnType(JsonElement questionElement)
         {
             XElement? questionType = null;
 
-            switch (question.GetProperty("questionType").GetProperty("type").GetString().Trim())
+            if (questionElement.GetProperty("questionType").GetProperty("type").GetString() is null)
+                return questionType;
+
+            switch (questionElement.GetProperty("questionType").GetProperty("type").GetString().Trim())
             {
                 case QuestionType.Radio:
-                    questionType = new(QuestionType.Radio, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Radio, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()));
                     break;
                 case QuestionType.Checkbox:
-                    questionType = new(QuestionType.Checkbox, new XAttribute("label", question.GetProperty("label").GetString().Trim()), new XAttribute("atleast", "1"));
+                    questionType = new(QuestionType.Checkbox, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()), new XAttribute("atleast", "1"));
                     break;
                 case QuestionType.Select:
-                    questionType = new(QuestionType.Select, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Select, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()));
                     break;
-
                 case QuestionType.Number:
-                    questionType = new(QuestionType.Number, new XAttribute("label", question.GetProperty("label").GetString().Trim()));
+                    questionType = new(QuestionType.Number, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()));
                     break;
                 default:
                     Console.WriteLine("No matching question type found");
                     break;
             }
 
-            var questionOptions = question.GetProperty("questionOptions");
+            var questionOptions = questionElement.GetProperty("questionOptions");
 
-            if (questionOptions.ValueKind == JsonValueKind.Array && questionType is not null && (question.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Radio || question.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Select))
+            if (questionOptions.ValueKind == JsonValueKind.Array && questionType is not null && (questionElement.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Radio || questionElement.GetProperty("questionType").GetProperty("type").GetString().Trim() == QuestionType.Select))
             {
-                bool customValueExists = questionOptions.EnumerateArray().Any(CustomValueExists);
-
-                if (customValueExists)
+                if (questionOptions.EnumerateArray().Any(CustomValueExists))
                 {
                     XAttribute attribute = new("values", "order");
 
