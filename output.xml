@@ -2260,4 +2260,26 @@
     <col label="c2" value="Year">Year</col>
   </number>
   <suspend />
+  <text label="Q81">
+    <title>
+      <strong>What is your university name?</strong>
+    </title>
+    <comment>
+      <em>Please be specific</em>
+    </comment>
+    <row label="r1">Graphic</row>
+    <col label="r2">2nd grade</col>
+  </text>
+  <suspend />
+  <textarea label="Q82">
+    <title>
+      <strong>Provide some other details about your University</strong>
+    </title>
+    <comment>
+      <em>Please be specific</em>
+    </comment>
+    <row label="r1">Graphic</row>
+    <col label="r2">2nd grade</col>
+  </textarea>
+  <suspend />
 </survey>

@@ -191,6 +191,12 @@ namespace JsonToXmlConverter
                 case QuestionType.Number:
                     questionType = new(QuestionType.Number, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()));
                     break;
+                case QuestionType.Text:
+                    questionType = new(QuestionType.Text, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()));
+                    break;
+                case QuestionType.Textarea:
+                    questionType = new(QuestionType.Textarea, new XAttribute("label", questionElement.GetProperty("label").GetString().Trim()));
+                    break;
                 default:
                     Console.WriteLine("No matching question type found");
                     break;
